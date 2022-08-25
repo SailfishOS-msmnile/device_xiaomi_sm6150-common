@@ -103,6 +103,8 @@ BOARD_KERNEL_CMDLINE += loop.max_part=7
 BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 BOARD_KERNEL_CMDLINE += audit=0
 BOARD_KERNEL_CMDLINE += selinux=1
+TARGET_KERNEL_ADDITIONAL_FLAGS += HOSTCFLAGS="-fuse-ld=lld -Wno-unused-command-line-argument"
+NEED_KERNEL_MODULE_SYSTEM := true
 
 # TARGET_KERNEL_APPEND_DTB handling
 ifeq ($(strip $(PRODUCT_USE_DYNAMIC_PARTITIONS)),true)
